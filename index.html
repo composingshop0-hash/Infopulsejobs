@@ -1,531 +1,264 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-<meta charset='UTF-8'/>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-<title>InfoPulseJobs - Pakistan Job Portal</title>
-<link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap' rel='stylesheet'/>
-<style>
-:root {
-  --navy: #0a1628;
-  --blue: #1a3a6b;
-  --accent: #e8a020;
-  --gold: #f5c842;
-  --light: #f4f6fb;
-  --white: #ffffff;
-  --gray: #6b7a99;
-  --border: #dde3f0;
-  --gov: #1a6b3a;
-  --private: #1a3a6b;
-  --intern: #7b2fa0;
-  --scholar: #b84a00;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--light);
-  color: var(--navy);
-}
-header {
-  background: var(--navy);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-}
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-icon {
-  width: 40px; height: 40px;
-  background: var(--accent);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; font-weight: 900; color: var(--navy);
-}
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px; font-weight: 900;
-  color: var(--white);
-}
-.logo-text span { color: var(--accent); }
-nav { display: flex; gap: 24px; align-items: center; }
-nav a {
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  font-size: 14px; font-weight: 500;
-  transition: color 0.2s;
-}
-nav a:hover { color: var(--accent); }
-.nav-btn {
-  background: var(--accent);
-  color: var(--navy) !important;
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-weight: 600 !important;
-}
-.hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1a4a8b 100%);
-  padding: 72px 24px 80px;
-  text-align: center;
-}
-.hero-badge {
-  display: inline-block;
-  background: rgba(232,160,32,0.15);
-  border: 1px solid rgba(232,160,32,0.4);
-  color: var(--gold);
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 100px;
-  margin-bottom: 20px;
-}
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px; font-weight: 900;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-.hero h1 span { color: var(--accent); }
-.hero p {
-  color: rgba(255,255,255,0.7);
-  font-size: 17px;
-  max-width: 520px;
-  margin: 0 auto 36px;
-  line-height: 1.7;
-}
-.search-box {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 8px;
-  display: flex;
-  gap: 8px;
-  max-width: 680px;
-  margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-}
-.search-box input {
-  flex: 1; border: none; outline: none;
-  font-size: 15px; padding: 10px 16px;
-  font-family: 'DM Sans', sans-serif;
-  color: var(--navy); background: transparent;
-}
-.search-box select {
-  border: none; outline: none;
-  font-size: 14px; padding: 10px 12px;
-  font-family: 'DM Sans', sans-serif;
-  color: var(--gray);
-  background: var(--light);
-  border-radius: 10px; cursor: pointer;
-}
-.search-btn {
-  background: var(--accent);
-  color: var(--navy);
-  border: none; padding: 12px 24px;
-  border-radius: 10px; font-size: 14px;
-  font-weight: 700; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition: background 0.2s;
-}
-.search-btn:hover { background: var(--gold); }
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-.stat { text-align: center; }
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; font-weight: 700;
-  color: var(--accent);
-}
-.stat-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
-.section { max-width: 1200px; margin: 0 auto; padding: 56px 24px; }
-.section-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; font-weight: 700;
-  color: var(--navy);
-}
-.section-title span { color: var(--accent); }
-.see-all {
-  color: var(--blue); font-size: 14px; font-weight: 600;
-  text-decoration: none;
-}
-.see-all:hover { color: var(--accent); }
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-.cat-card {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 24px 20px;
-  border: 1.5px solid var(--border);
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-}
-.cat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10,22,40,0.1); }
-.cat-icon {
-  width: 52px; height: 52px;
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px; font-weight: 900;
-  margin: 0 auto 14px;
-}
-.cat-card.gov .cat-icon { background: rgba(26,107,58,0.1); color: var(--gov); }
-.cat-card.private .cat-icon { background: rgba(26,58,107,0.1); color: var(--private); }
-.cat-card.intern .cat-icon { background: rgba(123,47,160,0.1); color: var(--intern); }
-.cat-card.scholar .cat-icon { background: rgba(184,74,0,0.1); color: var(--scholar); }
-.cat-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--navy); }
-.cat-count { font-size: 12px; color: var(--gray); }
-.jobs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 20px;
-}
-.job-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 24px;
-  border: 1.5px solid var(--border);
-  transition: all 0.2s;
-  border-left: 4px solid var(--border);
-}
-.job-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(10,22,40,0.1); border-left-color: var(--accent); }
-.job-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-.job-logo {
-  width: 48px; height: 48px;
-  border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; font-weight: 900;
-  background: var(--light);
-  flex-shrink: 0;
-}
-.job-badge {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 4px 10px;
-  border-radius: 100px;
-  text-transform: uppercase;
-}
-.badge-gov { background: rgba(26,107,58,0.1); color: var(--gov); }
-.badge-private { background: rgba(26,58,107,0.1); color: var(--private); }
-.badge-intern { background: rgba(123,47,160,0.1); color: var(--intern); }
-.badge-scholar { background: rgba(184,74,0,0.1); color: var(--scholar); }
-.job-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-.job-org { font-size: 13px; color: var(--gray); margin-bottom: 14px; }
-.job-meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--gray); margin-bottom: 18px; }
-.meta-item { display: flex; align-items: center; gap: 5px; }
-.job-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid var(--border); padding-top: 16px;
-}
-.deadline { font-size: 12px; color: var(--gray); }
-.deadline strong { color: #c0392b; }
-.apply-btn {
-  background: var(--navy); color: var(--white);
-  border: none; padding: 9px 18px;
-  border-radius: 9px; font-size: 13px;
-  font-weight: 600; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition: background 0.2s;
-}
-.apply-btn:hover { background: var(--accent); color: var(--navy); }
-.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
-.filter-tab {
-  padding: 8px 18px;
-  border-radius: 100px;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  font-size: 13px; font-weight: 600;
-  color: var(--gray); cursor: pointer;
-  transition: all 0.2s;
-  font-family: 'DM Sans', sans-serif;
-}
-.filter-tab:hover { border-color: var(--navy); color: var(--navy); }
-.filter-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
-.newsletter {
-  background: linear-gradient(135deg, var(--navy), var(--blue));
-  border-radius: 20px;
-  padding: 48px;
-  text-align: center;
-  max-width: 1152px;
-  margin: 0 auto 56px;
-}
-.newsletter h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; color: var(--white); margin-bottom: 10px;
-}
-.newsletter p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 28px; }
-.newsletter-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
-.newsletter-form input {
-  flex: 1; border: none; outline: none;
-  padding: 13px 18px; border-radius: 10px;
-  font-size: 14px; font-family: 'DM Sans', sans-serif;
-}
-.newsletter-form button {
-  background: var(--accent); color: var(--navy);
-  border: none; padding: 13px 22px;
-  border-radius: 10px; font-size: 14px;
-  font-weight: 700; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-}
-footer {
-  background: var(--navy);
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  padding: 28px 24px;
-  font-size: 13px;
-}
-footer strong { color: var(--accent); }
-.divider { height: 1px; background: var(--border); max-width: 1200px; margin: 0 auto; }
-@media (max-width: 640px) {
-  nav { display: none; }
-  .hero h1 { font-size: 32px; }
-  .search-box { flex-direction: column; }
-  .newsletter { padding: 32px 20px; }
-  .newsletter-form { flex-direction: column; }
-}
-</style>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  <title>InfoPulseJobs - Pakistan No. 1 Jobs Website</title>
+  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap' rel='stylesheet'/>
+  <link rel='stylesheet' href='style.css'/>
 </head>
 <body>
 
-<header>
-  <div class='header-inner'>
-    <a class='logo' href='#'>
-      <div class='logo-text'>InfoPulse<span>Jobs</span></div>
-    </a>
-    <nav>
-      <a href='#'>Home</a>
-      <a href='#'>Govt Jobs</a>
-      <a href='#'>Bank Jobs</a>
-      <a href='#'>Private</a>
-      <a href='#'>Internships</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class='header-inner'>
+      <a class='logo' href='#'>
+        <div class='logo-word'>
+          <span class='info'>Info</span><span class='pulse'>Pulse</span><span class='jobs'>Jobs</span>
+        </div>
+      </a>
+      <nav>
+        <a href='#'>Home</a>
+        <a href='#'>Govt Jobs</a>
+        <a href='#'>Bank Jobs</a>
+        <a href='#'>Private Jobs</a>
+        <a href='#'>Internships</a>
+        <a href='#'>Scholarships</a>
+        <a href='#'>Govt Loan / Scheme</a>
+      </nav>
+    </div>
+  </header>
 
-<div class='hero'>
-  <div class='hero-badge'>Pakistan No.1 Job Website</div>
-  <h1>Find Your <span>Dream Job</span><br/>Across Pakistan</h1>
-  <p>Govt jobs, Bank jobs, Private, Internships and Scholarships — All in one place. Updated daily.</p>
-  <div class='search-box'>
-    <input type='text' placeholder='Job title, keyword, or organization...'/>
-    <select>
-      <option>All Categories</option>
-      <option>Government</option>
-      <option>Private</option>
-      <option>Internship</option>
-      <option>Scholarship</option>
-    </select>
-    <button class='search-btn'>Search Jobs</button>
+  <!-- HERO -->
+  <div class='hero'>
+    <div class='hero-badge'>Pakistan No. 1 Jobs Website</div>
+    <h1>Find Your <span>Dream Job</span><br/>Across Pakistan</h1>
+    <p>Govt jobs, Bank jobs, Private jobs, Internships, Scholarships and Govt loan / schemes — all in one place. Updated daily.</p>
+    <div class='search-box'>
+      <input type='text' placeholder='Job title, keyword, or organization...'/>
+      <select>
+        <option>All Categories</option>
+        <option>Government Jobs</option>
+        <option>Bank Jobs</option>
+        <option>Private Jobs</option>
+        <option>Internships</option>
+        <option>Scholarships</option>
+        <option>Govt Loan / Scheme</option>
+      </select>
+      <button class='search-btn'>Search Jobs</button>
+    </div>
+    <div class='stats'>
+      <div class='stat'><div class='stat-num'>80+</div><div class='stat-label'>Active Jobs</div></div>
+      <div class='stat'><div class='stat-num'>50+</div><div class='stat-label'>Organizations</div></div>
+      <div class='stat'><div class='stat-num'>10+</div><div class='stat-label'>Loan Schemes</div></div>
+      <div class='stat'><div class='stat-num'>Daily</div><div class='stat-label'>Updated</div></div>
+    </div>
   </div>
-  <div class='stats'>
-    <div class='stat'><div class='stat-num'>2,400+</div><div class='stat-label'>Active Jobs</div></div>
-    <div class='stat'><div class='stat-num'>850+</div><div class='stat-label'>Organizations</div></div>
-    <div class='stat'><div class='stat-num'>Daily</div><div class='stat-label'>Updated</div></div>
-    <div class='stat'><div class='stat-num'>All 4</div><div class='stat-label'>Provinces</div></div>
-  </div>
-</div>
 
-<div class='divider'></div>
-
-<div class='section'>
-  <div class='section-header'>
-    <div class='section-title'>Latest <span>Jobs</span></div>
-    <a href='#' class='see-all'>See all jobs</a>
+  <!-- CATEGORIES -->
+  <div class='section'>
+    <div class='section-header'>
+      <div class='section-title'>Browse by <span>Category</span></div>
+      <a href='#' class='see-all'>View All</a>
+    </div>
+    <div class='categories'>
+      <a href='#' class='cat-card gov'>
+        <div class='cat-icon'>GOV</div>
+        <div class='cat-name'>Government Jobs</div>
+        <div class='cat-count'>50 positions</div>
+      </a>
+      <a href='#' class='cat-card gov'>
+        <div class='cat-icon'>BANK</div>
+        <div class='cat-name'>Bank Jobs</div>
+        <div class='cat-count'>30 positions</div>
+      </a>
+      <a href='#' class='cat-card loan'>
+        <div class='cat-icon'>LOAN</div>
+        <div class='cat-name'>Govt Loan / Scheme</div>
+        <div class='cat-count'>10+ schemes</div>
+      </a>
+      <a href='#' class='cat-card private'>
+        <div class='cat-icon'>PVT</div>
+        <div class='cat-name'>Private Jobs</div>
+        <div class='cat-count'>30 positions</div>
+      </a>
+      <a href='#' class='cat-card intern'>
+        <div class='cat-icon'>INT</div>
+        <div class='cat-name'>Internships</div>
+        <div class='cat-count'>50 positions</div>
+      </a>
+      <a href='#' class='cat-card scholar'>
+        <div class='cat-icon'>SCH</div>
+        <div class='cat-name'>Scholarships</div>
+        <div class='cat-count'>15 opportunities</div>
+      </a>
+    </div>
   </div>
-  <div class='filter-tabs'>
-    <button class='filter-tab active' onclick='filterJobs(this, "all")'>All Jobs</button>
-    <button class='filter-tab' onclick='filterJobs(this, "gov")'>Government</button>
-    <button class='filter-tab' onclick='filterJobs(this, "private")'>Private</button>
-    <button class='filter-tab' onclick='filterJobs(this, "intern")'>Internships</button>
-    <button class='filter-tab' onclick='filterJobs(this, "scholar")'>Scholarships</button>
-  </div>
-  <div class='jobs-grid' id='jobsGrid'>
 
-    <div class='job-card' data-cat='gov'>
-      <div class='job-top'>
-        <div class='job-logo'>FPSC</div>
-        <span class='job-badge badge-gov'>Government</span>
-      </div>
-      <div class='job-title'>Assistant Director (BS-17)</div>
-      <div class='job-org'>Federal Public Service Commission</div>
-      <div class='job-meta'>
-        <span class='meta-item'>Location: Islamabad</span>
-        <span class='meta-item'>Edu: Bachelor</span>
-        <span class='meta-item'>Full-time</span>
-      </div>
-      <div class='job-footer'>
-        <div class='deadline'>Last Date: <strong>15 May 2025</strong></div>
-        <button class='apply-btn' onclick='applyJob("FPSC AD")'>Apply Now</button>
-      </div>
+  <div class='divider'></div>
+
+  <!-- LATEST JOBS -->
+  <div class='section'>
+    <div class='section-header'>
+      <div class='section-title'>Latest <span>Jobs</span></div>
+      <a href='#' class='see-all'>See all jobs</a>
     </div>
 
-    <div class='job-card' data-cat='private'>
-      <div class='job-top'>
-        <div class='job-logo'>SYS</div>
-        <span class='job-badge badge-private'>Private</span>
-      </div>
-      <div class='job-title'>Software Engineer (React/Node)</div>
-      <div class='job-org'>Systems Limited, Lahore</div>
-      <div class='job-meta'>
-        <span class='meta-item'>Location: Lahore</span>
-        <span class='meta-item'>Salary: 60k-100k</span>
-        <span class='meta-item'>Full-time</span>
-      </div>
-      <div class='job-footer'>
-        <div class='deadline'>Last Date: <strong>30 Apr 2025</strong></div>
-        <button class='apply-btn' onclick='applyJob("Systems Ltd")'>Apply Now</button>
-      </div>
+    <!-- FILTER TABS -->
+    <div class='filter-tabs'>
+      <button class='filter-tab active' onclick='filterJobs(this, "all")'>All</button>
+      <button class='filter-tab' onclick='filterJobs(this, "gov")'>Government</button>
+      <button class='filter-tab' onclick='filterJobs(this, "bank")'>Bank</button>
+      <button class='filter-tab' onclick='filterJobs(this, "private")'>Private</button>
+      <button class='filter-tab' onclick='filterJobs(this, "intern")'>Internships</button>
+      <button class='filter-tab' onclick='filterJobs(this, "scholar")'>Scholarships</button>
+      <button class='filter-tab' onclick='filterJobs(this, "loan")'>Govt Loan / Scheme</button>
     </div>
 
-    <div class='job-card' data-cat='gov'>
-      <div class='job-top'>
-        <div class='job-logo'>PHD</div>
-        <span class='job-badge badge-gov'>Government</span>
-      </div>
-      <div class='job-title'>Medical Officer (BPS-17)</div>
-      <div class='job-org'>Health Department Punjab</div>
-      <div class='job-meta'>
-        <span class='meta-item'>Location: Punjab</span>
-        <span class='meta-item'>Edu: MBBS</span>
-        <span class='meta-item'>Full-time</span>
-      </div>
-      <div class='job-footer'>
-        <div class='deadline'>Last Date: <strong>20 May 2025</strong></div>
-        <button class='apply-btn' onclick='applyJob("Punjab MO")'>Apply Now</button>
-      </div>
-    </div>
+    <!-- JOB CARDS -->
+    <div class='jobs-grid' id='jobsGrid'>
 
-    <div class='job-card' data-cat='intern'>
-      <div class='job-top'>
-        <div class='job-logo'>NTS</div>
-        <span class='job-badge badge-intern'>Internship</span>
+      <div class='job-card' data-cat='gov'>
+        <div class='job-top'>
+          <div class='job-logo'>FPSC</div>
+          <span class='job-badge badge-gov'>Government</span>
+        </div>
+        <div class='job-title'>Assistant Director (BS-17)</div>
+        <div class='job-org'>Federal Public Service Commission</div>
+        <div class='job-meta'>
+          <span class='meta-item'>Islamabad</span>
+          <span class='meta-item'>Bachelor</span>
+          <span class='meta-item'>Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>15 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("FPSC AD")'>Apply Now</button>
+        </div>
       </div>
-      <div class='job-title'>Business Development Intern</div>
-      <div class='job-org'>Netsol Technologies, Lahore</div>
-      <div class='job-meta'>
-        <span class='meta-item'>Location: Lahore</span>
-        <span class='meta-item'>Duration: 3 Months</span>
-        <span class='meta-item'>Stipend Given</span>
-      </div>
-      <div class='job-footer'>
-        <div class='deadline'>Last Date: <strong>5 May 2025</strong></div>
-        <button class='apply-btn' onclick='applyJob("Netsol Intern")'>Apply Now</button>
-      </div>
-    </div>
 
-    <div class='job-card' data-cat='scholar'>
-      <div class='job-top'>
-        <div class='job-logo'>HEC</div>
-        <span class='job-badge badge-scholar'>Scholarship</span>
+        <div class='job-card' data-cat='bank'>
+        <div class='job-top'>
+          <div class='job-logo'>UBL</div>
+          <span class='job-badge badge-gov'>Bank</span>
+        </div>
+        <div class='job-title'>BDO</div>
+        <div class='job-org'>United Bank Limited UBL</div>
+        <div class='job-meta'>
+          <span class='meta-item'>Faisalabad</span>
+          <span class='meta-item'>Bachelor</span>
+          <span class='meta-item'>Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>12 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("https://ubldigital.com/")'>Apply Now</button>
+        </div>
       </div>
-      <div class='job-title'>HEC Need-Based Scholarship 2025</div>
-      <div class='job-org'>Higher Education Commission Pakistan</div>
-      <div class='job-meta'>
-        <span class='meta-item'>All Pakistan</span>
-        <span class='meta-item'>Undergraduate</span>
-        <span class='meta-item'>Full Tuition</span>
-      </div>
-      <div class='job-footer'>
-        <div class='deadline'>Last Date: <strong>28 Apr 2025</strong></div>
-        <button class='apply-btn' onclick='applyJob("HEC Scholarship")'>Apply Now</button>
-      </div>
-    </div>
 
-    <div class='job-card' data-cat='private'>
-      <div class='job-top'>
-        <div class='job-logo'>ENG</div>
-        <span class='job-badge badge-private'>Private</span>
+      <div class='job-card' data-cat='private'>
+        <div class='job-top'>
+          <div class='job-logo'>SYS</div>
+          <span class='job-badge badge-private'>Private</span>
+        </div>
+        <div class='job-title'>Software Engineer (React/Node)</div>
+        <div class='job-org'>Systems Limited, Lahore</div>
+        <div class='job-meta'>
+          <span class='meta-item'>Lahore</span>
+          <span class='meta-item'>60k-100k/month</span>
+          <span class='meta-item'>Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>30 Apr 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("Systems Ltd")'>Apply Now</button>
+        </div>
       </div>
-      <div class='job-title'>Accounts and Finance Manager</div>
-      <div class='job-org'>Engro Corporation, Karachi</div>
-      <div class='job-meta'>
-        <span class='meta-item'>Location: Karachi</span>
-        <span class='meta-item'>Edu: ACCA/CA</span>
-        <span class='meta-item'>120k-180k/month</span>
-      </div>
-      <div class='job-footer'>
-        <div class='deadline'>Last Date: <strong>10 May 2025</strong></div>
-        <button class='apply-btn' onclick='applyJob("Engro Finance")'>Apply Now</button>
-      </div>
-    </div>
 
+      <div class='job-card' data-cat='gov'>
+        <div class='job-top'>
+          <div class='job-logo'>PHD</div>
+          <span class='job-badge badge-gov'>Government</span>
+        </div>
+        <div class='job-title'>Medical Officer (BPS-17)</div>
+        <div class='job-org'>Health Department Punjab</div>
+        <div class='job-meta'>
+          <span class='meta-item'>Punjab</span>
+          <span class='meta-item'>MBBS</span>
+          <span class='meta-item'>Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>20 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("Punjab MO")'>Apply Now</button>
+        </div>
+      </div>
+
+      <div class='job-card' data-cat='intern'>
+        <div class='job-top'>
+          <div class='job-logo'>NTS</div>
+          <span class='job-badge badge-intern'>Internship</span>
+        </div>
+        <div class='job-title'>Business Development Intern</div>
+        <div class='job-org'>Netsol Technologies, Lahore</div>
+        <div class='job-meta'>
+          <span class='meta-item'>Lahore</span>
+          <span class='meta-item'>3 Months</span>
+          <span class='meta-item'>Stipend Given</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>5 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("Netsol Intern")'>Apply Now</button>
+        </div>
+      </div>
+
+      <div class='job-card' data-cat='scholar'>
+        <div class='job-top'>
+          <div class='job-logo'>HEC</div>
+          <span class='job-badge badge-scholar'>Scholarship</span>
+        </div>
+        <div class='job-title'>HEC Need-Based Scholarship 2025</div>
+        <div class='job-org'>Higher Education Commission Pakistan</div>
+        <div class='job-meta'>
+          <span class='meta-item'>All Pakistan</span>
+          <span class='meta-item'>Undergraduate</span>
+          <span class='meta-item'>Full Tuition</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>28 Apr 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("HEC Scholarship")'>Apply Now</button>
+        </div>
+      </div>
+
+      <div class='job-card' data-cat='loan'>
+        <div class='job-top'>
+          <div class='job-logo'>ACAGP</div>
+          <span class='job-badge badge-loan'>Govt Loan</span>
+        </div>
+        <div class='job-title'>Apni Chhat Apna Ghar Program</div>
+        <div class='job-org'>Government of Pakistan</div>
+        <div class='job-meta'>
+          <span class='meta-item'>Only Punjab</span>
+          <span class='meta-item'>Up to 15 Lakh</span>
+          <span class='meta-item'>Easy Installments</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Status: <strong class='open'>Open</strong></div>
+          <button class='apply-btn' onclick='applyJob("https://acag.punjab.gov.pk/index.aspx")'>Apply Now</button>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
 
-<div class='newsletter'>
-  <h2>Get Jobs in Your Inbox</h2>
-  <p>Subscribe and get latest government and private job alerts daily — free!</p>
-  <div class='newsletter-form'>
-    <input type='email' placeholder='Enter your email address'/>
-    <button onclick='subscribe()'>Subscribe Free</button>
-  </div>
-</div>
+  <!-- FOOTER -->
+  <footer>
+    <div class='footer-logo'>
+      <span class='info'>Info</span><span class='pulse'>Pulse</span><span class='jobs'>Jobs</span>
+    </div>
+    <p>Pakistan No. 1 Jobs Website — Updated Daily</p>
+    <div class='footer-email'>
+      Contact: <a href='mailto:infopulsejobsoffical@gmail.com'>infopulsejobsoffical@gmail.com</a>
+    </div>
+    <p class='footer-copy'>2025 <strong>InfoPulseJobs.com</strong> | All Rights Reserved</p>
+  </footer>
 
-<footer>
-  <div style='font-family:Playfair Display,serif; font-size:18px; font-weight:700; color:#fff; margin-bottom:8px;'>
-    InfoPulse<span style='color:var(--accent)'>Jobs</span>
-  </div>
-  <p>Pakistan trusted job information website — updated daily.</p>
-  <p style='margin-top:8px;'>2025 <strong>InfoPulseJobs.com</strong> | All Rights Reserved</p>
-</footer>
-
-<script>
-function filterJobs(btn, cat) {
-  var tabs = document.querySelectorAll('.filter-tab');
-  for (var i = 0; i < tabs.length; i++) {
-    tabs[i].classList.remove('active');
-  }
-  btn.classList.add('active');
-  var cards = document.querySelectorAll('.job-card');
-  for (var j = 0; j < cards.length; j++) {
-    if (cat === 'all' || cards[j].getAttribute('data-cat') === cat) {
-      cards[j].style.display = 'block';
-    } else {
-      cards[j].style.display = 'none';
-    }
-  }
-}
-function applyJob(name) {
-  alert('Redirecting to application page for: ' + name);
-}
-function subscribe() {
-  var input = document.querySelector('.newsletter-form input');
-  if (input.value.indexOf('@') !== -1) {
-    alert('Subscribed! You will receive daily job alerts at: ' + input.value);
-    input.value = '';
-  } else {
-    alert('Please enter a valid email address.');
-  }
-}
-</script>
+  <script src='script.js'></script>
 </body>
 </html>
