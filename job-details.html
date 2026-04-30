@@ -3,9 +3,284 @@
 <head>
   <meta charset='UTF-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-  <title>InfoPulseJobs - Pakistan No. 1 Jobs Website</title>
+  <title>Punjab Counter Narcotics Force Jobs 2026 | InfoPulseJobs</title>
   <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap' rel='stylesheet'/>
-  <link rel='stylesheet' href='style.css'/>
+  <style>
+    :root {
+      --navy:   #0d2150;
+      --blue:   #1565e8;
+      --light:  #f0f4ff;
+      --white:  #ffffff;
+      --gray:   #5a6a8a;
+      --border: #dde3f0;
+      --gov:    #1a6b3a;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:#f7f9ff; color:var(--navy); }
+
+    /* ── HEADER ── */
+    header {
+      background:#fff; position:sticky; top:0; z-index:100;
+      box-shadow:0 2px 12px rgba(21,101,232,0.1);
+      border-bottom:2px solid var(--light);
+    }
+    .header-inner {
+      max-width:1100px; margin:0 auto; padding:0 24px;
+      display:flex; align-items:center; justify-content:space-between; height:74px;
+    }
+    .logo { text-decoration:none; }
+    .logo-word { font-family:'Playfair Display',serif; font-size:26px; font-weight:900; }
+    .logo-word .info { color:var(--navy); }
+    .logo-word .pulse { color:var(--blue); }
+    .logo-word .jobs { color:var(--navy); }
+    nav { display:flex; gap:18px; }
+    nav a { color:var(--blue); text-decoration:none; font-size:13px; font-weight:700; }
+    nav a:hover { color:var(--navy); }
+    .back-btn {
+      display:inline-flex; align-items:center; gap:6px;
+      color:var(--blue); font-size:13px; font-weight:700;
+      text-decoration:none; background:var(--light);
+      padding:8px 16px; border-radius:100px;
+      border:1.5px solid var(--border); transition:all 0.2s;
+    }
+    .back-btn:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width:1100px; margin:0 auto;
+      padding:14px 24px; font-size:13px; color:var(--gray);
+    }
+    .breadcrumb a { color:var(--blue); text-decoration:none; font-weight:600; }
+    .breadcrumb span { margin:0 6px; }
+
+    /* ── HERO ── */
+    .job-hero {
+      background:linear-gradient(135deg,#eef2ff 0%,#dbe4ff 60%,#c5d3ff 100%);
+      border-bottom:1px solid var(--border); padding:36px 24px 32px;
+    }
+    .job-hero-inner {
+      max-width:1100px; margin:0 auto;
+      display:flex; align-items:flex-start;
+      justify-content:space-between; gap:24px; flex-wrap:wrap;
+    }
+    .hero-left { flex:1; min-width:260px; }
+    .job-badge-hero {
+      display:inline-block;
+      background:rgba(26,107,58,0.1); color:var(--gov);
+      font-size:11px; font-weight:700; letter-spacing:0.5px;
+      padding:4px 14px; border-radius:100px; text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .org-name {
+      font-family:'Playfair Display',serif;
+      font-size:30px; font-weight:900; color:var(--navy);
+      line-height:1.2; margin-bottom:10px;
+    }
+    /* Posts list */
+    .posts-preview {
+      display:flex; flex-wrap:wrap; align-items:center; gap:8px;
+    }
+    .post-tag {
+      background:rgba(255,255,255,0.85); border:1px solid var(--border);
+      color:var(--navy); font-size:13px; font-weight:600;
+      padding:5px 14px; border-radius:8px;
+    }
+    .see-more-btn {
+      background:none; border:none; color:var(--blue);
+      font-size:13px; font-weight:700; cursor:pointer;
+      font-family:'DM Sans',sans-serif; text-decoration:underline;
+      padding:0;
+    }
+    /* Deadline box */
+    .deadline-box {
+      background:#fff; border:2px solid #c0392b;
+      border-radius:14px; padding:16px 24px;
+      text-align:center; flex-shrink:0;
+      box-shadow:0 4px 16px rgba(192,57,43,0.1);
+    }
+    .dl-label { font-size:11px; color:var(--gray); font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+    .dl-date { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:#c0392b; margin-top:4px; }
+
+    /* ── INFO BOXES ── */
+    .info-boxes-wrap {
+      max-width:1100px; margin:0 auto; padding:28px 24px 0;
+    }
+    .info-boxes {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+      gap:14px;
+    }
+    .info-box {
+      background:#fff; border:1.5px solid var(--border);
+      border-radius:14px; padding:16px 18px;
+      display:flex; align-items:flex-start; gap:12px;
+      transition:box-shadow 0.2s;
+    }
+    .info-box:hover { box-shadow:0 6px 20px rgba(21,101,232,0.08); }
+    .box-icon {
+      width:38px; height:38px; border-radius:10px;
+      background:var(--light); display:flex;
+      align-items:center; justify-content:center;
+      font-size:18px; flex-shrink:0;
+    }
+    .box-label { font-size:11px; color:var(--gray); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; }
+    .box-value { font-size:14px; font-weight:700; color:var(--navy); line-height:1.4; }
+
+    /* ── MAIN LAYOUT ── */
+    .content-wrap {
+      max-width:1100px; margin:28px auto;
+      padding:0 24px; display:grid;
+      grid-template-columns:1fr 320px; gap:24px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background:#fff; border-radius:18px;
+      border:1.5px solid var(--border); padding:28px; margin-bottom:24px;
+    }
+    .card-title {
+      font-family:'Playfair Display',serif;
+      font-size:20px; font-weight:700; color:var(--navy);
+      margin-bottom:20px; padding-bottom:12px;
+      border-bottom:2px solid var(--light);
+      display:flex; align-items:center; gap:10px;
+    }
+    .card-title .dot { width:8px; height:8px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+
+    /* ── ALL POSTS SECTION ── */
+    .all-posts { display:none; margin-top:16px; }
+    .all-posts.open { display:block; }
+    .posts-full-list {
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .posts-full-list .post-item {
+      background:var(--light); border:1px solid var(--border);
+      color:var(--navy); font-size:13px; font-weight:600;
+      padding:6px 16px; border-radius:8px;
+    }
+
+    /* ── ELIGIBILITY ── */
+    .eligibility-section {}
+    .elig-group { margin-bottom:22px; }
+    .elig-group:last-child { margin-bottom:0; }
+    .elig-group-title {
+      font-size:15px; font-weight:700; color:var(--navy);
+      margin-bottom:12px; display:flex; align-items:center; gap:8px;
+    }
+    .elig-group-title::before {
+      content:''; width:4px; height:18px;
+      background:var(--blue); border-radius:2px; display:block;
+    }
+    .elig-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .elig-list li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:13.5px; color:#2d3a5a; line-height:1.6;
+    }
+    .elig-list li::before {
+      content:'✓'; color:var(--gov); font-weight:900;
+      font-size:13px; margin-top:2px; flex-shrink:0;
+    }
+    .elig-sub { margin-top:8px; margin-left:20px; }
+    .elig-sub-item {
+      font-size:13px; color:var(--gray); line-height:1.6;
+      padding:6px 12px; background:var(--light);
+      border-radius:8px; margin-bottom:6px;
+      border-left:3px solid var(--border);
+    }
+    .elig-sub-item strong { color:var(--navy); }
+    .post-name-label {
+      font-weight:700; color:var(--blue);
+    }
+
+    /* ── AD IMAGE ── */
+    .ad-image-wrap {
+      width:100%; border-radius:12px; overflow:hidden;
+      border:1.5px solid var(--border); background:var(--light);
+      min-height:180px; display:flex; align-items:center; justify-content:center;
+    }
+    .ad-image-wrap img { width:100%; display:block; border-radius:12px; }
+    .img-placeholder {
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; gap:10px; padding:40px;
+      color:var(--gray); text-align:center;
+    }
+    .img-placeholder .icon { font-size:40px; }
+    .img-placeholder p { font-size:13px; font-weight:600; }
+
+    /* ── SIDEBAR ── */
+    .cta-section {
+      background:linear-gradient(135deg,#eef2ff,#dbe4ff);
+      border:1.5px solid var(--border); border-radius:18px;
+      padding:24px; margin-bottom:24px; text-align:center;
+    }
+    .cta-section p { font-size:13px; color:var(--gray); margin-bottom:16px; font-weight:500; line-height:1.6; }
+    .btn-apply {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      background:var(--blue); color:#fff;
+      padding:14px 28px; border-radius:12px;
+      font-size:15px; font-weight:700;
+      text-decoration:none; transition:all 0.2s;
+      margin-bottom:12px;
+      box-shadow:0 4px 16px rgba(21,101,232,0.3);
+    }
+    .btn-apply:hover { background:var(--navy); transform:translateY(-2px); }
+    .divider-or { font-size:12px; color:var(--gray); font-weight:600; text-align:center; margin:8px 0; letter-spacing:1px; }
+    .btn-video {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      background:#fff; color:#c0392b;
+      padding:13px 28px; border-radius:12px;
+      font-size:14px; font-weight:700;
+      text-decoration:none; transition:all 0.2s;
+      border:2px solid #c0392b;
+    }
+    .btn-video:hover { background:#c0392b; color:#fff; transform:translateY(-2px); }
+
+    /* quick info table */
+    .info-table { width:100%; border-collapse:collapse; }
+    .info-table tr { border-bottom:1px solid var(--light); }
+    .info-table tr:last-child { border-bottom:none; }
+    .info-table td { padding:10px 0; font-size:13px; vertical-align:top; }
+    .info-table td:first-child { color:var(--gray); font-weight:600; width:44%; }
+    .info-table td:last-child { color:var(--navy); font-weight:700; }
+
+    /* video */
+    .video-wrap { border-radius:12px; overflow:hidden; border:1.5px solid var(--border); background:#000; aspect-ratio:16/9; }
+    .video-wrap iframe { width:100%; height:100%; border:none; display:block; }
+
+    /* share */
+    .share-section { text-align:center; }
+    .share-section p { font-size:13px; color:var(--gray); margin-bottom:12px; font-weight:600; }
+    .share-btns { display:flex; gap:10px; justify-content:center; }
+    .share-btn {
+      flex:1; padding:10px; border-radius:10px;
+      font-size:12px; font-weight:700; cursor:pointer;
+      border:1.5px solid var(--border); background:var(--light);
+      color:var(--navy); transition:all 0.2s;
+    }
+    .share-btn:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+
+    /* ── FOOTER ── */
+    footer {
+      background:var(--navy); color:rgba(255,255,255,0.6);
+      text-align:center; padding:28px 24px; font-size:13px; margin-top:20px;
+    }
+    .footer-logo { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; margin-bottom:6px; }
+    .footer-logo .info { color:#fff; }
+    .footer-logo .pulse { color:#4da6ff; }
+    .footer-logo .jobs { color:#fff; }
+    .footer-email a { color:#4da6ff; text-decoration:none; font-weight:600; }
+    .footer-copy strong { color:#4da6ff; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:768px){
+      nav { display:none; }
+      .content-wrap { grid-template-columns:1fr; }
+      .org-name { font-size:22px; }
+      .job-hero-inner { flex-direction:column; }
+      .deadline-box { width:100%; }
+      .info-boxes { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
 </head>
 <body>
 
@@ -19,265 +294,265 @@
       </a>
       <nav>
         <a href='index.html'>Home</a>
-        <a href='#govJobs'>Govt Jobs</a>
-        <a href='#bankJobs'>Bank Jobs</a>
-        <a href='#privateJobs'>Private Jobs</a>
-        <a href='#internJobs'>Internships</a>
-        <a href='#scholarJobs'>Scholarships</a>
-        <a href='#loanJobs'>Govt Loan / Scheme</a>
+        <a href='#'>Govt Jobs</a>
+        <a href='#'>Bank Jobs</a>
+        <a href='#'>Private Jobs</a>
+        <a href='#'>Internships</a>
+        <a href='#'>Scholarships</a>
+        <a href='#'>Govt Loan / Scheme</a>
       </nav>
+      <a class='back-btn' href='index.html'>← Back to Jobs</a>
     </div>
   </header>
 
+  <!-- BREADCRUMB -->
+  <div class='breadcrumb'>
+    <a href='index.html'>Home</a>
+    <span>›</span>
+    <a href='#'>Government Jobs</a>
+    <span>›</span>
+    Punjab Counter Narcotics Force Jobs 2026
+  </div>
+
   <!-- HERO -->
-  <div class='hero'>
-    <div class='hero-badge'>Pakistan No. 1 Jobs Website</div>
-    <h1>Find Your <span>Dream Job</span><br/>Across Pakistan</h1>
-    <p>Govt jobs, Bank jobs, Private jobs, Internships, Scholarships and Govt loan / schemes — all in one place. Updated daily.</p>
-    <div class='search-box'>
-      <input type='text' placeholder='Job title, keyword, or organization...'/>
-      <select>
-        <option>All Categories</option>
-        <option>Government Jobs</option>
-        <option>Bank Jobs</option>
-        <option>Private Jobs</option>
-        <option>Internships</option>
-        <option>Scholarships</option>
-        <option>Govt Loan / Scheme</option>
-      </select>
-      <button class='search-btn'>Search Jobs</button>
+  <div class='job-hero'>
+    <div class='job-hero-inner'>
+      <div class='hero-left'>
+        <span class='job-badge-hero'>Government Job</span>
+
+        <!--
+          ====================================================
+          ORGANIZATION NAME — yahan apni org ka naam likho
+          ====================================================
+        -->
+        <div class='org-name'>Punjab Counter Narcotics Force</div>
+
+        <!--
+          ====================================================
+          POSTS — pehle 2-3 dikhao, baaki "see more" mein
+          ====================================================
+        -->
+        <div class='posts-preview' id='postsPreview'>
+          <span class='post-tag'>Constable</span>
+          <span class='post-tag'>Lady Constable</span>
+          <button class='see-more-btn' onclick='togglePosts()'>... see more</button>
+        </div>
+
+        <!-- All posts (hidden by default) -->
+        <div class='all-posts' id='allPosts'>
+          <div class='posts-full-list'>
+            <span class='post-item'>Constable</span>
+            <span class='post-item'>Lady Constable</span>
+            <span class='post-item'>Junior Computer Operator</span>
+            <span class='post-item'>Naib Qasid</span>
+            <span class='post-item'>Driver</span>
+            <span class='post-item'>Sanitary Worker</span>
+            <span class='post-item'>Cook</span>
+          </div>
+          <button class='see-more-btn' style='margin-top:10px;' onclick='togglePosts()'>show less ▲</button>
+        </div>
+      </div>
+
+      <div class='deadline-box'>
+        <div class='dl-label'>Last Date to Apply</div>
+        <!--
+          ====================================================
+          LAST DATE — yahan last date likho
+          ====================================================
+        -->
+        <div class='dl-date'>12 May 2026</div>
+      </div>
     </div>
-    <div class='stats'>
-      <div class='stat'><div class='stat-num'>80+</div><div class='stat-label'>Active Jobs</div></div>
-      <div class='stat'><div class='stat-num'>50+</div><div class='stat-label'>Organizations</div></div>
-      <div class='stat'><div class='stat-num'>10+</div><div class='stat-label'>Loan Schemes</div></div>
-      <div class='stat'><div class='stat-num'>Daily</div><div class='stat-label'>Updated</div></div>
+  </div>
+
+  <!-- INFO BOXES (5 boxes) -->
+  <div class='info-boxes-wrap'>
+    <div class='info-boxes'>
+      <!--
+        ====================================================
+        IN 5 BOXES MEIN APNI JOB KI INFO FILL KARO
+        ====================================================
+      -->
+      <div class='info-box'>
+        <div class='box-icon'>💰</div>
+        <div>
+          <div class='box-label'>Offered Salary</div>
+          <div class='box-value'>PKR 35000 – 60000</div>
+        </div>
+      </div>
+      <div class='info-box'>
+        <div class='box-icon'>🎂</div>
+        <div>
+          <div class='box-label'>Age Limit</div>
+          <div class='box-value'>25 – 30 Years</div>
+        </div>
+      </div>
+      <div class='info-box'>
+        <div class='box-icon'>👤</div>
+        <div>
+          <div class='box-label'>Gender</div>
+          <div class='box-value'>Male, Female</div>
+        </div>
+      </div>
+      <div class='info-box'>
+        <div class='box-icon'>🛠️</div>
+        <div>
+          <div class='box-label'>Skills Level</div>
+          <div class='box-value'>Computer Basics, Physical Fitness</div>
+        </div>
+      </div>
+      <div class='info-box'>
+        <div class='box-icon'>📋</div>
+        <div>
+          <div class='box-label'>Designations</div>
+          <div class='box-value'>Constable, Operator, Driver, Naib Qasid, Cook</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- CATEGORIES — hidden -->
-  <!--
-  <div class='section'>
-    <div class='section-header'>
-      <div class='section-title'>Browse by <span>Category</span></div>
-      <a href='#' class='see-all'>View All</a>
+  <!-- MAIN CONTENT -->
+  <div class='content-wrap'>
+
+    <!-- LEFT COLUMN -->
+    <div class='left-col'>
+
+      <!-- ELIGIBILITY CRITERIA -->
+      <div class='card'>
+        <div class='card-title'><span class='dot'></span> Eligibility Criteria</div>
+
+        <!--
+          ====================================================
+          ELIGIBILITY — neeche wala content apni job k mutabiq
+          change karo. Structure same rakhna, sirf text badalna
+          ====================================================
+        -->
+
+        <!-- General Requirements -->
+        <div class='elig-group'>
+          <div class='elig-group-title'>General Requirements</div>
+          <ul class='elig-list'>
+            <li>Only Punjab domicile holders may apply.</li>
+            <li>Age limit as per government rules.</li>
+            <li>Recruitment under Contract Appointment Policy 2004.</li>
+            <li>Candidates must meet qualification standards for their relevant post.</li>
+          </ul>
+        </div>
+
+        <!-- Qualification Requirements -->
+        <div class='elig-group'>
+          <div class='elig-group-title'>Qualification Requirements (As per Ad)</div>
+          <ul class='elig-list'>
+            <li>
+              <div>
+                <span class='post-name-label'>Junior Computer Operator:</span>
+                Intermediate (Computer Science) + MS Office Skills + 30 wpm typing speed.
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class='post-name-label'>Lady Constable / Constable:</span>
+                <div class='elig-sub'>
+                  <div class='elig-sub-item'>Matric qualification with 2nd Division from a recognized board required to apply.</div>
+                  <div class='elig-sub-item'>Height 5 Feet and 2 Inches required to apply.</div>
+                  <div class='elig-sub-item'>Applicants have to complete running test 1.6 Km in 10 minutes.</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span class='post-name-label'>Naib Qasid:</span>&nbsp; Matric/Middle + Relevant Experience
+            </li>
+            <li>
+              <span class='post-name-label'>Driver:</span>&nbsp; Matric/Middle + LTV/HTV Driving License
+            </li>
+            <li>
+              <span class='post-name-label'>Sanitary Worker:</span>&nbsp; Matric/Middle + Relevant Experience
+            </li>
+            <li>
+              <span class='post-name-label'>Cook:</span>&nbsp; Matric + TEVTA Diploma + Relevant Experience
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- JOB ADVERTISEMENT IMAGE -->
+      <div class='card'>
+        <div class='card-title'><span class='dot'></span> Official Advertisement</div>
+        <div class='ad-image-wrap'>
+          <!--
+            ====================================================
+            IMAGE — src mein apni job ad image ka link lagao
+            Ya local: src='images/pcnf-ad.jpg'
+            ====================================================
+          -->
+          <img src='YOUR_IMAGE_URL_HERE' alt='Job Advertisement'
+               onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'icon\'>🖼️</div><p>Job Advertisement Image<br><small>src= mein apni image ka link lagao</small></p></div>'"/>
+        </div>
+      </div>
+
     </div>
-    <div class='categories'>
-      <a href='#' class='cat-card gov'>
-        <div class='cat-icon'>GOV</div>
-        <div class='cat-name'>Government Jobs</div>
-        <div class='cat-count'>50 positions</div>
-      </a>
-      <a href='#' class='cat-card gov'>
-        <div class='cat-icon'>BANK</div>
-        <div class='cat-name'>Bank Jobs</div>
-        <div class='cat-count'>30 positions</div>
-      </a>
-      <a href='#' class='cat-card loan'>
-        <div class='cat-icon'>LOAN</div>
-        <div class='cat-name'>Govt Loan / Scheme</div>
-        <div class='cat-count'>10+ schemes</div>
-      </a>
-      <a href='#' class='cat-card private'>
-        <div class='cat-icon'>PVT</div>
-        <div class='cat-name'>Private Jobs</div>
-        <div class='cat-count'>30 positions</div>
-      </a>
-      <a href='#' class='cat-card intern'>
-        <div class='cat-icon'>INT</div>
-        <div class='cat-name'>Internships</div>
-        <div class='cat-count'>50 positions</div>
-      </a>
-      <a href='#' class='cat-card scholar'>
-        <div class='cat-icon'>SCH</div>
-        <div class='cat-name'>Scholarships</div>
-        <div class='cat-count'>15 opportunities</div>
-      </a>
-    </div>
-  </div>
-  <div class='divider'></div>
-  -->
 
-  <!-- LATEST JOBS -->
-  <div class='section'>
-    <div class='section-header'>
-      <div class='section-title'>Latest <span>Jobs</span></div>
-      <a href='#' class='see-all'>See all jobs</a>
-    </div>
+    <!-- RIGHT SIDEBAR -->
+    <div class='sidebar'>
 
-    <!-- FILTER TABS -->
-    <div class='filter-tabs'>
-      <button class='filter-tab active' onclick='filterJobs(this, "all")'>All</button>
-      <button class='filter-tab' onclick='filterJobs(this, "gov")'>Government</button>
-      <button class='filter-tab' onclick='filterJobs(this, "bank")'>Bank</button>
-      <button class='filter-tab' onclick='filterJobs(this, "private")'>Private</button>
-      <button class='filter-tab' onclick='filterJobs(this, "intern")'>Internships</button>
-      <button class='filter-tab' onclick='filterJobs(this, "scholar")'>Scholarships</button>
-      <button class='filter-tab' onclick='filterJobs(this, "loan")'>Govt Loan / Scheme</button>
-    </div>
-
-    <!-- JOB CARDS -->
-    <div class='jobs-grid' id='jobsGrid'>
-
-      <!-- GOVT JOBS ANCHOR -->
-      <div id='govJobs' style='display:none;'></div>
-
-      <!-- CARD 1 — GOVERNMENT -->
-      <div class='job-card' data-cat='gov'>
-        <div class='job-top'>
-          <span class='job-badge badge-gov'>Government</span>
-        </div>
-        <div class='job-title'>Federal Public Service Commission</div>
-        <div class='job-posts'>
-          <span class='jpost'>Assistant Director</span>
-          <span class='jpost'>Deputy Director</span>
-          <span class='jpost-more'>+3 more</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 Islamabad</span>
-          <span class='meta-item'>🎓 Bachelor</span>
-          <span class='meta-item'>💼 Full-time</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Last Date: <strong>15 May 2025</strong></div>
-          <button class='apply-btn' onclick='applyJob("fpsc-jobs.html")'>View Details</button>
-        </div>
+      <!-- APPLY + VIDEO BUTTONS -->
+      <div class='cta-section'>
+        <p>Ready to apply? Click below to visit the official application page.</p>
+        <!--
+          ====================================================
+          APPLY LINK — href mein official apply URL lagao
+          ====================================================
+        -->
+        <a class='btn-apply' href='OFFICIAL_APPLY_LINK_HERE' target='_blank'>
+          Click Here to Apply →
+        </a>
+        <div class='divider-or'>— OR —</div>
+        <a class='btn-video' href='#videoSection'>
+          ▶ &nbsp;Watch How to Apply
+        </a>
       </div>
 
-      <!-- CARD 2 — BANK -->
-      <!-- BANK JOBS ANCHOR -->
-      <div id='bankJobs' style='display:none;'></div>
-      <div class='job-card' data-cat='bank'>
-        <div class='job-top'>
-          <span class='job-badge badge-gov'>Bank</span>
-        </div>
-        <div class='job-title'>United Bank Limited — UBL</div>
-        <div class='job-posts'>
-          <span class='jpost'>BDO</span>
-          <span class='jpost'>Branch Manager</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 Faisalabad</span>
-          <span class='meta-item'>🎓 Bachelor</span>
-          <span class='meta-item'>💼 Full-time</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Last Date: <strong>12 May 2025</strong></div>
-          <button class='apply-btn' onclick='applyJob("ubl-jobs.html")'>View Details</button>
-        </div>
+      <!-- QUICK INFO TABLE -->
+      <div class='card'>
+        <div class='card-title'><span class='dot'></span> Quick Info</div>
+        <table class='info-table'>
+          <tr><td>Organization</td><td>Punjab Counter Narcotics Force</td></tr>
+          <tr><td>Category</td><td>Government</td></tr>
+          <tr><td>Location</td><td>Punjab</td></tr>
+          <tr><td>Job Type</td><td>Contract</td></tr>
+          <tr><td>Last Date</td><td style='color:#c0392b;'>12 May 2026</td></tr>
+        </table>
       </div>
 
-      <!-- CARD 3 — PRIVATE -->
-      <!-- PRIVATE JOBS ANCHOR -->
-      <div id='privateJobs' style='display:none;'></div>
-      <div class='job-card' data-cat='private'>
-        <div class='job-top'>
-          <span class='job-badge badge-private'>Private</span>
+      <!-- YOUTUBE VIDEO -->
+      <div class='card' id='videoSection'>
+        <div class='card-title'><span class='dot'></span> How to Apply — Video</div>
+        <!--
+          ====================================================
+          YOUTUBE VIDEO ID — YouTube URL se sirf ID copy karo
+          Example: youtube.com/watch?v=ABC123  → ABC123
+          ====================================================
+        -->
+        <div class='video-wrap'>
+          <iframe
+            src='https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID'
+            title='How to Apply'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class='job-title'>Systems Limited, Lahore</div>
-        <div class='job-posts'>
-          <span class='jpost'>Software Engineer</span>
-          <span class='jpost'>React Developer</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 Lahore</span>
-          <span class='meta-item'>💰 60k–100k/mo</span>
-          <span class='meta-item'>💼 Full-time</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Last Date: <strong>30 Apr 2025</strong></div>
-          <button class='apply-btn' onclick='applyJob("systems-jobs.html")'>View Details</button>
-        </div>
+        <p style='font-size:12px;color:#5a6a8a;margin-top:12px;text-align:center;font-weight:500;'>
+          ▶ Step-by-step guide on how to apply online
+        </p>
       </div>
 
-      <!-- CARD 4 — GOVERNMENT -->
-      <div class='job-card' data-cat='gov'>
-        <div class='job-top'>
-          <span class='job-badge badge-gov'>Government</span>
-        </div>
-        <div class='job-title'>Health Department Punjab</div>
-        <div class='job-posts'>
-          <span class='jpost'>Medical Officer</span>
-          <span class='jpost'>Lady Medical Officer</span>
-          <span class='jpost-more'>+2 more</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 Punjab</span>
-          <span class='meta-item'>🎓 MBBS</span>
-          <span class='meta-item'>💼 Full-time</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Last Date: <strong>20 May 2025</strong></div>
-          <button class='apply-btn' onclick='applyJob("health-dept-jobs.html")'>View Details</button>
-        </div>
-      </div>
-
-      <!-- CARD 5 — INTERNSHIP -->
-      <!-- INTERNSHIPS ANCHOR -->
-      <div id='internJobs' style='display:none;'></div>
-      <div class='job-card' data-cat='intern'>
-        <div class='job-top'>
-          <span class='job-badge badge-intern'>Internship</span>
-        </div>
-        <div class='job-title'>Netsol Technologies, Lahore</div>
-        <div class='job-posts'>
-          <span class='jpost'>Business Development Intern</span>
-          <span class='jpost'>IT Intern</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 Lahore</span>
-          <span class='meta-item'>⏱️ 3 Months</span>
-          <span class='meta-item'>💵 Stipend Given</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Last Date: <strong>5 May 2025</strong></div>
-          <button class='apply-btn' onclick='applyJob("netsol-intern.html")'>View Details</button>
-        </div>
-      </div>
-
-      <!-- CARD 6 — SCHOLARSHIP -->
-      <!-- SCHOLARSHIPS ANCHOR -->
-      <div id='scholarJobs' style='display:none;'></div>
-      <div class='job-card' data-cat='scholar'>
-        <div class='job-top'>
-          <span class='job-badge badge-scholar'>Scholarship</span>
-        </div>
-        <div class='job-title'>Higher Education Commission Pakistan</div>
-        <div class='job-posts'>
-          <span class='jpost'>Need-Based Scholarship</span>
-          <span class='jpost'>Merit Scholarship</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 All Pakistan</span>
-          <span class='meta-item'>🎓 Undergraduate</span>
-          <span class='meta-item'>💯 Full Tuition</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Last Date: <strong>28 Apr 2025</strong></div>
-          <button class='apply-btn' onclick='applyJob("hec-scholarship.html")'>View Details</button>
-        </div>
-      </div>
-
-      <!-- CARD 7 — GOVT LOAN -->
-      <!-- LOAN ANCHOR -->
-      <div id='loanJobs' style='display:none;'></div>
-      <div class='job-card' data-cat='loan'>
-        <div class='job-top'>
-          <span class='job-badge badge-loan'>Govt Loan</span>
-        </div>
-        <div class='job-title'>Government of Pakistan</div>
-        <div class='job-posts'>
-          <span class='jpost'>Apni Chhat Apna Ghar</span>
-          <span class='jpost'>Housing Scheme</span>
-        </div>
-        <div class='job-meta'>
-          <span class='meta-item'>📍 Only Punjab</span>
-          <span class='meta-item'>💰 Up to 15 Lakh</span>
-          <span class='meta-item'>✅ Easy Installments</span>
-        </div>
-        <div class='job-footer'>
-          <div class='deadline'>Status: <strong class='open'>Open</strong></div>
-          <button class='apply-btn' onclick='applyJob("acag-scheme.html")'>View Details</button>
+      <!-- SHARE -->
+      <div class='card share-section'>
+        <p>Share this job</p>
+        <div class='share-btns'>
+          <button class='share-btn' onclick='shareJob("whatsapp")'>WhatsApp</button>
+          <button class='share-btn' onclick='shareJob("copy")'>Copy Link</button>
+          <button class='share-btn' onclick='shareJob("facebook")'>Facebook</button>
         </div>
       </div>
 
@@ -296,6 +571,41 @@
     <p class='footer-copy'>2025 <strong>InfoPulseJobs.com</strong> | All Rights Reserved</p>
   </footer>
 
-  <script src='script.js'></script>
+  <script>
+    // Toggle posts list
+    function togglePosts() {
+      var preview = document.getElementById('postsPreview');
+      var all = document.getElementById('allPosts');
+      if (all.classList.contains('open')) {
+        all.classList.remove('open');
+        preview.style.display = 'flex';
+      } else {
+        all.classList.add('open');
+        preview.style.display = 'none';
+      }
+    }
+
+    // Share buttons
+    function shareJob(type) {
+      var url = window.location.href;
+      var title = document.querySelector('.org-name').innerText + ' Jobs | InfoPulseJobs';
+      if (type === 'whatsapp') {
+        window.open('https://wa.me/?text=' + encodeURIComponent(title + '\n' + url), '_blank');
+      } else if (type === 'copy') {
+        navigator.clipboard.writeText(url).then(function() {
+          alert('Link copied! Share karo apne doston ke saath.');
+        });
+      } else if (type === 'facebook') {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
+      }
+    }
+
+    // Smooth scroll to video
+    document.querySelector('.btn-video').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('videoSection').scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  </script>
+
 </body>
 </html>
