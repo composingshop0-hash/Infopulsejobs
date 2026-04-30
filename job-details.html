@@ -3,267 +3,9 @@
 <head>
   <meta charset='UTF-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-  <title>Assistant Director (BS-17) - FPSC | InfoPulseJobs</title>
+  <title>InfoPulseJobs - Pakistan No. 1 Jobs Website</title>
   <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap' rel='stylesheet'/>
-  <style>
-    :root {
-      --navy:    #0d2150;
-      --blue:    #1565e8;
-      --light:   #f0f4ff;
-      --white:   #ffffff;
-      --gray:    #5a6a8a;
-      --border:  #dde3f0;
-      --gov:     #1a6b3a;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', sans-serif; background: #f7f9ff; color: var(--navy); }
-
-    /* ── HEADER ── */
-    header {
-      background: #fff;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 12px rgba(21,101,232,0.1);
-      border-bottom: 2px solid var(--light);
-    }
-    .header-inner {
-      max-width: 1100px; margin: 0 auto;
-      padding: 0 24px; display: flex;
-      align-items: center; justify-content: space-between; height: 74px;
-    }
-    .logo { text-decoration: none; }
-    .logo-word { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; }
-    .logo-word .info { color: var(--navy); }
-    .logo-word .pulse { color: var(--blue); }
-    .logo-word .jobs { color: var(--navy); }
-    nav { display: flex; gap: 18px; }
-    nav a { color: var(--blue); text-decoration: none; font-size: 13px; font-weight: 700; }
-    nav a:hover { color: var(--navy); }
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      color: var(--blue); font-size: 13px; font-weight: 700;
-      text-decoration: none; background: var(--light);
-      padding: 8px 16px; border-radius: 100px;
-      border: 1.5px solid var(--border); transition: all 0.2s;
-    }
-    .back-btn:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
-
-    /* ── BREADCRUMB ── */
-    .breadcrumb {
-      max-width: 1100px; margin: 0 auto;
-      padding: 16px 24px; font-size: 13px; color: var(--gray);
-    }
-    .breadcrumb a { color: var(--blue); text-decoration: none; font-weight: 600; }
-    .breadcrumb span { margin: 0 6px; }
-
-    /* ── HERO BANNER ── */
-    .job-hero {
-      background: linear-gradient(135deg, #eef2ff 0%, #dbe4ff 60%, #c5d3ff 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 40px 24px;
-    }
-    .job-hero-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: flex-start;
-      justify-content: space-between; gap: 24px; flex-wrap: wrap;
-    }
-    .job-hero-left { display: flex; align-items: flex-start; gap: 20px; }
-    .job-logo-big {
-      width: 72px; height: 72px; border-radius: 18px;
-      background: #fff; border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 900; color: var(--navy);
-      flex-shrink: 0; box-shadow: 0 4px 16px rgba(21,101,232,0.1);
-    }
-    .job-hero-info { display: flex; flex-direction: column; gap: 8px; }
-    .job-badge-hero {
-      display: inline-block;
-      background: rgba(26,107,58,0.1); color: var(--gov);
-      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
-      padding: 4px 12px; border-radius: 100px; text-transform: uppercase;
-      width: fit-content;
-    }
-    .job-title-big {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px; font-weight: 900; color: var(--navy); line-height: 1.2;
-    }
-    .job-org-big { font-size: 15px; color: var(--gray); font-weight: 600; }
-    .job-meta-hero { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
-    .meta-tag {
-      background: rgba(255,255,255,0.8); border: 1px solid var(--border);
-      padding: 5px 14px; border-radius: 8px;
-      font-size: 13px; font-weight: 600; color: var(--navy);
-    }
-    .deadline-hero {
-      background: #fff; border: 2px solid #c0392b;
-      border-radius: 14px; padding: 16px 24px; text-align: center;
-      flex-shrink: 0; box-shadow: 0 4px 16px rgba(192,57,43,0.1);
-    }
-    .deadline-hero .dl-label { font-size: 11px; color: var(--gray); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-    .deadline-hero .dl-date { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: #c0392b; margin-top: 4px; }
-
-    /* ── MAIN CONTENT ── */
-    .content-wrap {
-      max-width: 1100px; margin: 36px auto;
-      padding: 0 24px; display: grid;
-      grid-template-columns: 1fr 340px; gap: 28px;
-    }
-
-    /* ── CARDS ── */
-    .card {
-      background: #fff; border-radius: 18px;
-      border: 1.5px solid var(--border);
-      padding: 28px; margin-bottom: 24px;
-    }
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px; font-weight: 700; color: var(--navy);
-      margin-bottom: 20px; padding-bottom: 12px;
-      border-bottom: 2px solid var(--light);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .card-title .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--blue); flex-shrink: 0;
-    }
-
-    /* ── AD IMAGE ── */
-    .ad-image-wrap {
-      width: 100%; border-radius: 12px; overflow: hidden;
-      border: 1.5px solid var(--border);
-      background: var(--light);
-      display: flex; align-items: center; justify-content: center;
-      min-height: 200px; margin-bottom: 0;
-    }
-    .ad-image-wrap img {
-      width: 100%; display: block; border-radius: 12px;
-    }
-    /* Placeholder shown when no image */
-    .img-placeholder {
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; gap: 10px;
-      padding: 40px; color: var(--gray); text-align: center;
-    }
-    .img-placeholder .icon { font-size: 40px; }
-    .img-placeholder p { font-size: 13px; font-weight: 600; }
-
-    /* ── KEY POINTS ── */
-    .points-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .points-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 14px; line-height: 1.6; color: #2d3a5a;
-    }
-    .points-list li .bullet {
-      width: 22px; height: 22px; border-radius: 6px;
-      background: var(--light); color: var(--blue);
-      font-size: 12px; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 1px;
-    }
-    .points-list li strong { color: var(--navy); }
-
-    /* ── SIDEBAR ── */
-    .sidebar {}
-    .info-table { width: 100%; border-collapse: collapse; }
-    .info-table tr { border-bottom: 1px solid var(--light); }
-    .info-table tr:last-child { border-bottom: none; }
-    .info-table td { padding: 10px 0; font-size: 13px; vertical-align: top; }
-    .info-table td:first-child { color: var(--gray); font-weight: 600; width: 44%; }
-    .info-table td:last-child { color: var(--navy); font-weight: 700; }
-
-    /* ── CTA BUTTONS ── */
-    .cta-section {
-      background: linear-gradient(135deg, #eef2ff, #dbe4ff);
-      border: 1.5px solid var(--border); border-radius: 18px;
-      padding: 28px; margin-bottom: 24px; text-align: center;
-    }
-    .cta-section p {
-      font-size: 13px; color: var(--gray); margin-bottom: 16px;
-      font-weight: 500; line-height: 1.6;
-    }
-    .btn-apply {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--blue); color: #fff;
-      padding: 14px 28px; border-radius: 12px;
-      font-size: 15px; font-weight: 700;
-      text-decoration: none; transition: all 0.2s;
-      margin-bottom: 12px;
-      box-shadow: 0 4px 16px rgba(21,101,232,0.3);
-    }
-    .btn-apply:hover { background: var(--navy); transform: translateY(-2px); }
-    .btn-apply .arrow { font-size: 18px; }
-
-    .btn-video {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      background: #fff; color: #c0392b;
-      padding: 13px 28px; border-radius: 12px;
-      font-size: 14px; font-weight: 700;
-      text-decoration: none; transition: all 0.2s;
-      border: 2px solid #c0392b;
-    }
-    .btn-video:hover { background: #c0392b; color: #fff; transform: translateY(-2px); }
-    .btn-video .yt-icon { font-size: 18px; }
-
-    .divider-or {
-      font-size: 12px; color: var(--gray); font-weight: 600;
-      text-align: center; margin: 8px 0; letter-spacing: 1px;
-    }
-
-    /* ── VIDEO SECTION ── */
-    .video-wrap {
-      border-radius: 12px; overflow: hidden;
-      border: 1.5px solid var(--border);
-      background: #000;
-      aspect-ratio: 16/9;
-    }
-    .video-wrap iframe {
-      width: 100%; height: 100%; border: none; display: block;
-    }
-    /* Placeholder when no video */
-    .video-placeholder {
-      aspect-ratio: 16/9;
-      background: var(--navy);
-      border-radius: 12px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 10px;
-      color: rgba(255,255,255,0.6); text-align: center; padding: 24px;
-    }
-    .video-placeholder .play { font-size: 48px; color: #c0392b; }
-    .video-placeholder p { font-size: 13px; font-weight: 600; }
-
-    /* ── SHARE ── */
-    .share-section { text-align: center; }
-    .share-section p { font-size: 13px; color: var(--gray); margin-bottom: 12px; font-weight: 600; }
-    .share-btns { display: flex; gap: 10px; justify-content: center; }
-    .share-btn {
-      flex: 1; padding: 10px; border-radius: 10px;
-      font-size: 12px; font-weight: 700; cursor: pointer;
-      border: 1.5px solid var(--border); background: var(--light);
-      color: var(--navy); transition: all 0.2s;
-    }
-    .share-btn:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy); color: rgba(255,255,255,0.6);
-      text-align: center; padding: 28px 24px; font-size: 13px; margin-top: 20px;
-    }
-    .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; margin-bottom: 6px; }
-    .footer-logo .info { color: #fff; }
-    .footer-logo .pulse { color: #4da6ff; }
-    .footer-logo .jobs { color: #fff; }
-    .footer-logo + p { margin-bottom: 8px; }
-    .footer-email a { color: #4da6ff; text-decoration: none; font-weight: 600; }
-    .footer-copy strong { color: #4da6ff; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      nav { display: none; }
-      .content-wrap { grid-template-columns: 1fr; }
-      .job-title-big { font-size: 22px; }
-      .job-hero-inner { flex-direction: column; }
-      .deadline-hero { width: 100%; }
-    }
-  </style>
+  <link rel='stylesheet' href='style.css'/>
 </head>
 <body>
 
@@ -277,188 +19,265 @@
       </a>
       <nav>
         <a href='index.html'>Home</a>
-        <a href='#'>Govt Jobs</a>
-        <a href='#'>Bank Jobs</a>
-        <a href='#'>Private Jobs</a>
-        <a href='#'>Internships</a>
-        <a href='#'>Scholarships</a>
-        <a href='#'>Govt Loan / Scheme</a>
+        <a href='#govJobs'>Govt Jobs</a>
+        <a href='#bankJobs'>Bank Jobs</a>
+        <a href='#privateJobs'>Private Jobs</a>
+        <a href='#internJobs'>Internships</a>
+        <a href='#scholarJobs'>Scholarships</a>
+        <a href='#loanJobs'>Govt Loan / Scheme</a>
       </nav>
-      <a class='back-btn' href='index.html'>← Back to Jobs</a>
     </div>
   </header>
 
-  <!-- BREADCRUMB -->
-  <div class='breadcrumb'>
-    <a href='index.html'>Home</a>
-    <span>›</span>
-    <a href='#'>Government Jobs</a>
-    <span>›</span>
-    Assistant Director (BS-17)
-  </div>
-
-  <!-- JOB HERO BANNER -->
-  <div class='job-hero'>
-    <div class='job-hero-inner'>
-      <div class='job-hero-left'>
-        <div class='job-logo-big'>FPSC</div>
-        <div class='job-hero-info'>
-          <span class='job-badge-hero'>Government Job</span>
-          <div class='job-title-big'>Assistant Director (BS-17)</div>
-          <div class='job-org-big'>Federal Public Service Commission</div>
-          <div class='job-meta-hero'>
-            <span class='meta-tag'>📍 Islamabad</span>
-            <span class='meta-tag'>🎓 Bachelor Degree</span>
-            <span class='meta-tag'>💼 Full-time</span>
-          </div>
-        </div>
-      </div>
-      <div class='deadline-hero'>
-        <div class='dl-label'>Last Date to Apply</div>
-        <div class='dl-date'>15 May 2025</div>
-      </div>
+  <!-- HERO -->
+  <div class='hero'>
+    <div class='hero-badge'>Pakistan No. 1 Jobs Website</div>
+    <h1>Find Your <span>Dream Job</span><br/>Across Pakistan</h1>
+    <p>Govt jobs, Bank jobs, Private jobs, Internships, Scholarships and Govt loan / schemes — all in one place. Updated daily.</p>
+    <div class='search-box'>
+      <input type='text' placeholder='Job title, keyword, or organization...'/>
+      <select>
+        <option>All Categories</option>
+        <option>Government Jobs</option>
+        <option>Bank Jobs</option>
+        <option>Private Jobs</option>
+        <option>Internships</option>
+        <option>Scholarships</option>
+        <option>Govt Loan / Scheme</option>
+      </select>
+      <button class='search-btn'>Search Jobs</button>
+    </div>
+    <div class='stats'>
+      <div class='stat'><div class='stat-num'>80+</div><div class='stat-label'>Active Jobs</div></div>
+      <div class='stat'><div class='stat-num'>50+</div><div class='stat-label'>Organizations</div></div>
+      <div class='stat'><div class='stat-num'>10+</div><div class='stat-label'>Loan Schemes</div></div>
+      <div class='stat'><div class='stat-num'>Daily</div><div class='stat-label'>Updated</div></div>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <div class='content-wrap'>
+  <!-- CATEGORIES — hidden -->
+  <!--
+  <div class='section'>
+    <div class='section-header'>
+      <div class='section-title'>Browse by <span>Category</span></div>
+      <a href='#' class='see-all'>View All</a>
+    </div>
+    <div class='categories'>
+      <a href='#' class='cat-card gov'>
+        <div class='cat-icon'>GOV</div>
+        <div class='cat-name'>Government Jobs</div>
+        <div class='cat-count'>50 positions</div>
+      </a>
+      <a href='#' class='cat-card gov'>
+        <div class='cat-icon'>BANK</div>
+        <div class='cat-name'>Bank Jobs</div>
+        <div class='cat-count'>30 positions</div>
+      </a>
+      <a href='#' class='cat-card loan'>
+        <div class='cat-icon'>LOAN</div>
+        <div class='cat-name'>Govt Loan / Scheme</div>
+        <div class='cat-count'>10+ schemes</div>
+      </a>
+      <a href='#' class='cat-card private'>
+        <div class='cat-icon'>PVT</div>
+        <div class='cat-name'>Private Jobs</div>
+        <div class='cat-count'>30 positions</div>
+      </a>
+      <a href='#' class='cat-card intern'>
+        <div class='cat-icon'>INT</div>
+        <div class='cat-name'>Internships</div>
+        <div class='cat-count'>50 positions</div>
+      </a>
+      <a href='#' class='cat-card scholar'>
+        <div class='cat-icon'>SCH</div>
+        <div class='cat-name'>Scholarships</div>
+        <div class='cat-count'>15 opportunities</div>
+      </a>
+    </div>
+  </div>
+  <div class='divider'></div>
+  -->
 
-    <!-- LEFT COLUMN -->
-    <div class='left-col'>
-
-      <!-- JOB ADVERTISEMENT IMAGE -->
-      <div class='card'>
-        <div class='card-title'><span class='dot'></span> Official Advertisement</div>
-        <div class='ad-image-wrap'>
-          <!--
-            =====================================================
-            YE LINE CHANGE KARO:
-            src='YOUR_IMAGE_URL_HERE'  =>  apni job ad image ka link lagao
-            Ya local image ho to:  src='images/fpsc-ad.jpg'
-            =====================================================
-          -->
-          <img src='YOUR_IMAGE_URL_HERE' alt='FPSC Job Advertisement'
-               onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'icon\'>🖼️</div><p>Job Advertisement Image<br><small>src= mein apni image ka link lagao</small></p></div>'"/>
-        </div>
-      </div>
-
-      <!-- KEY POINTS -->
-      <div class='card'>
-        <div class='card-title'><span class='dot'></span> Job Key Points</div>
-        <ul class='points-list'>
-          <!--
-            =====================================================
-            IN POINTS KO APNI JOB K MUTABIQ CHANGE KARO
-            =====================================================
-          -->
-          <li>
-            <span class='bullet'>1</span>
-            <span><strong>Position:</strong> Assistant Director BS-17 — Federal Government permanent position with full benefits.</span>
-          </li>
-          <li>
-            <span class='bullet'>2</span>
-            <span><strong>Organization:</strong> Federal Public Service Commission (FPSC) — Pakistan's top federal recruitment authority.</span>
-          </li>
-          <li>
-            <span class='bullet'>3</span>
-            <span><strong>Eligibility:</strong> Bachelor's degree (minimum 2nd division) from HEC recognized university required.</span>
-          </li>
-          <li>
-            <span class='bullet'>4</span>
-            <span><strong>Age Limit:</strong> 21 to 30 years. Age relaxation applicable as per government rules.</span>
-          </li>
-          <li>
-            <span class='bullet'>5</span>
-            <span><strong>Salary:</strong> BS-17 basic pay scale — approximately Rs. 45,000 to 60,000 per month plus allowances.</span>
-          </li>
-          <li>
-            <span class='bullet'>6</span>
-            <span><strong>How to Apply:</strong> Apply online through FPSC official website. No manual/postal applications accepted.</span>
-          </li>
-          <li>
-            <span class='bullet'>7</span>
-            <span><strong>Selection Process:</strong> Written test (MCQs + descriptive) followed by psychological assessment and interview.</span>
-          </li>
-          <li>
-            <span class='bullet'>8</span>
-            <span><strong>Last Date:</strong> 15 May 2025 — Apply before deadline, late submissions will not be entertained.</span>
-          </li>
-        </ul>
-      </div>
-
+  <!-- LATEST JOBS -->
+  <div class='section'>
+    <div class='section-header'>
+      <div class='section-title'>Latest <span>Jobs</span></div>
+      <a href='#' class='see-all'>See all jobs</a>
     </div>
 
-    <!-- RIGHT SIDEBAR -->
-    <div class='sidebar'>
+    <!-- FILTER TABS -->
+    <div class='filter-tabs'>
+      <button class='filter-tab active' onclick='filterJobs(this, "all")'>All</button>
+      <button class='filter-tab' onclick='filterJobs(this, "gov")'>Government</button>
+      <button class='filter-tab' onclick='filterJobs(this, "bank")'>Bank</button>
+      <button class='filter-tab' onclick='filterJobs(this, "private")'>Private</button>
+      <button class='filter-tab' onclick='filterJobs(this, "intern")'>Internships</button>
+      <button class='filter-tab' onclick='filterJobs(this, "scholar")'>Scholarships</button>
+      <button class='filter-tab' onclick='filterJobs(this, "loan")'>Govt Loan / Scheme</button>
+    </div>
 
-      <!-- APPLY + VIDEO CTA -->
-      <div class='cta-section'>
-        <p>Ready to apply? Click below to go to the official application page.</p>
+    <!-- JOB CARDS -->
+    <div class='jobs-grid' id='jobsGrid'>
 
-        <!--
-          =====================================================
-          APPLY LINK YAHAN LAGAO:
-          href='OFFICIAL_APPLY_LINK_HERE'  =>  original apply URL
-          =====================================================
-        -->
-        <a class='btn-apply' href='OFFICIAL_APPLY_LINK_HERE' target='_blank'>
-          <span>Click Here to Apply</span>
-          <span class='arrow'>→</span>
-        </a>
+      <!-- GOVT JOBS ANCHOR -->
+      <div id='govJobs' style='display:none;'></div>
 
-        <div class='divider-or'>— OR —</div>
-
-        <a class='btn-video' href='#videoSection'>
-          <span class='yt-icon'>▶</span>
-          <span>Watch How to Apply</span>
-        </a>
-      </div>
-
-      <!-- JOB DETAILS TABLE -->
-      <div class='card'>
-        <div class='card-title'><span class='dot'></span> Job Details</div>
-        <table class='info-table'>
-          <tr><td>Post</td><td>Assistant Director</td></tr>
-          <tr><td>Grade</td><td>BS-17</td></tr>
-          <tr><td>Organization</td><td>FPSC</td></tr>
-          <tr><td>Location</td><td>Islamabad</td></tr>
-          <tr><td>Education</td><td>Bachelor Degree</td></tr>
-          <tr><td>Job Type</td><td>Full-time</td></tr>
-          <tr><td>Last Date</td><td style='color:#c0392b;'>15 May 2025</td></tr>
-        </table>
-      </div>
-
-      <!-- YOUTUBE VIDEO -->
-      <div class='card' id='videoSection'>
-        <div class='card-title'><span class='dot'></span> How to Apply — Video Guide</div>
-        <!--
-          =====================================================
-          YOUTUBE VIDEO YAHAN LAGAO:
-          "YOUR_YOUTUBE_VIDEO_ID" ki jagah YouTube video ID lagao
-          Example: https://youtube.com/watch?v=ABC123xyz
-          to sirf  ABC123xyz  copy karo aur neeche lagao
-          =====================================================
-        -->
-        <div class='video-wrap'>
-          <iframe
-            src='https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID'
-            title='How to Apply - FPSC Assistant Director'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen>
-          </iframe>
+      <!-- CARD 1 — GOVERNMENT -->
+      <div class='job-card' data-cat='gov'>
+        <div class='job-top'>
+          <span class='job-badge badge-gov'>Government</span>
         </div>
-        <p style='font-size:12px; color:#5a6a8a; margin-top:12px; text-align:center; font-weight:500;'>
-          ▶ Watch this video to learn step-by-step how to apply online
-        </p>
+        <div class='job-title'>Federal Public Service Commission</div>
+        <div class='job-posts'>
+          <span class='jpost'>Assistant Director</span>
+          <span class='jpost'>Deputy Director</span>
+          <span class='jpost-more'>+3 more</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 Islamabad</span>
+          <span class='meta-item'>🎓 Bachelor</span>
+          <span class='meta-item'>💼 Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>15 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("fpsc-jobs.html")'>View Details</button>
+        </div>
       </div>
 
-      <!-- SHARE -->
-      <div class='card share-section'>
-        <p>Share this job</p>
-        <div class='share-btns'>
-          <button class='share-btn' onclick='shareJob("whatsapp")'>WhatsApp</button>
-          <button class='share-btn' onclick='shareJob("copy")'>Copy Link</button>
-          <button class='share-btn' onclick='shareJob("facebook")'>Facebook</button>
+      <!-- CARD 2 — BANK -->
+      <!-- BANK JOBS ANCHOR -->
+      <div id='bankJobs' style='display:none;'></div>
+      <div class='job-card' data-cat='bank'>
+        <div class='job-top'>
+          <span class='job-badge badge-gov'>Bank</span>
+        </div>
+        <div class='job-title'>United Bank Limited — UBL</div>
+        <div class='job-posts'>
+          <span class='jpost'>BDO</span>
+          <span class='jpost'>Branch Manager</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 Faisalabad</span>
+          <span class='meta-item'>🎓 Bachelor</span>
+          <span class='meta-item'>💼 Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>12 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("ubl-jobs.html")'>View Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 — PRIVATE -->
+      <!-- PRIVATE JOBS ANCHOR -->
+      <div id='privateJobs' style='display:none;'></div>
+      <div class='job-card' data-cat='private'>
+        <div class='job-top'>
+          <span class='job-badge badge-private'>Private</span>
+        </div>
+        <div class='job-title'>Systems Limited, Lahore</div>
+        <div class='job-posts'>
+          <span class='jpost'>Software Engineer</span>
+          <span class='jpost'>React Developer</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 Lahore</span>
+          <span class='meta-item'>💰 60k–100k/mo</span>
+          <span class='meta-item'>💼 Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>30 Apr 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("systems-jobs.html")'>View Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 4 — GOVERNMENT -->
+      <div class='job-card' data-cat='gov'>
+        <div class='job-top'>
+          <span class='job-badge badge-gov'>Government</span>
+        </div>
+        <div class='job-title'>Health Department Punjab</div>
+        <div class='job-posts'>
+          <span class='jpost'>Medical Officer</span>
+          <span class='jpost'>Lady Medical Officer</span>
+          <span class='jpost-more'>+2 more</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 Punjab</span>
+          <span class='meta-item'>🎓 MBBS</span>
+          <span class='meta-item'>💼 Full-time</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>20 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("health-dept-jobs.html")'>View Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 5 — INTERNSHIP -->
+      <!-- INTERNSHIPS ANCHOR -->
+      <div id='internJobs' style='display:none;'></div>
+      <div class='job-card' data-cat='intern'>
+        <div class='job-top'>
+          <span class='job-badge badge-intern'>Internship</span>
+        </div>
+        <div class='job-title'>Netsol Technologies, Lahore</div>
+        <div class='job-posts'>
+          <span class='jpost'>Business Development Intern</span>
+          <span class='jpost'>IT Intern</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 Lahore</span>
+          <span class='meta-item'>⏱️ 3 Months</span>
+          <span class='meta-item'>💵 Stipend Given</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>5 May 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("netsol-intern.html")'>View Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 6 — SCHOLARSHIP -->
+      <!-- SCHOLARSHIPS ANCHOR -->
+      <div id='scholarJobs' style='display:none;'></div>
+      <div class='job-card' data-cat='scholar'>
+        <div class='job-top'>
+          <span class='job-badge badge-scholar'>Scholarship</span>
+        </div>
+        <div class='job-title'>Higher Education Commission Pakistan</div>
+        <div class='job-posts'>
+          <span class='jpost'>Need-Based Scholarship</span>
+          <span class='jpost'>Merit Scholarship</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 All Pakistan</span>
+          <span class='meta-item'>🎓 Undergraduate</span>
+          <span class='meta-item'>💯 Full Tuition</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Last Date: <strong>28 Apr 2025</strong></div>
+          <button class='apply-btn' onclick='applyJob("hec-scholarship.html")'>View Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 7 — GOVT LOAN -->
+      <!-- LOAN ANCHOR -->
+      <div id='loanJobs' style='display:none;'></div>
+      <div class='job-card' data-cat='loan'>
+        <div class='job-top'>
+          <span class='job-badge badge-loan'>Govt Loan</span>
+        </div>
+        <div class='job-title'>Government of Pakistan</div>
+        <div class='job-posts'>
+          <span class='jpost'>Apni Chhat Apna Ghar</span>
+          <span class='jpost'>Housing Scheme</span>
+        </div>
+        <div class='job-meta'>
+          <span class='meta-item'>📍 Only Punjab</span>
+          <span class='meta-item'>💰 Up to 15 Lakh</span>
+          <span class='meta-item'>✅ Easy Installments</span>
+        </div>
+        <div class='job-footer'>
+          <div class='deadline'>Status: <strong class='open'>Open</strong></div>
+          <button class='apply-btn' onclick='applyJob("acag-scheme.html")'>View Details</button>
         </div>
       </div>
 
@@ -477,28 +296,6 @@
     <p class='footer-copy'>2025 <strong>InfoPulseJobs.com</strong> | All Rights Reserved</p>
   </footer>
 
-  <script>
-    // Share buttons
-    function shareJob(type) {
-      var url = window.location.href;
-      var title = 'Assistant Director BS-17 - FPSC | InfoPulseJobs';
-      if (type === 'whatsapp') {
-        window.open('https://wa.me/?text=' + encodeURIComponent(title + '\n' + url), '_blank');
-      } else if (type === 'copy') {
-        navigator.clipboard.writeText(url).then(function() {
-          alert('Link copied! Share karo apne doston ke saath.');
-        });
-      } else if (type === 'facebook') {
-        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
-      }
-    }
-
-    // Smooth scroll to video when "Watch How to Apply" is clicked
-    document.querySelector('.btn-video').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('videoSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  </script>
-
+  <script src='script.js'></script>
 </body>
 </html>
